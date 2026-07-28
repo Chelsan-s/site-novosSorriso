@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Novos Sorrisos — Clínica Odontológica</title>
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -39,7 +39,8 @@
   .nav{display:flex;align-items:center;gap:18px;height:82px}
   .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.3rem;color:var(--navy);white-space:nowrap;flex:none}
   .logo .s{color:var(--green)}
-  .logo .tooth{width:38px;height:38px;flex:none;object-fit:contain}
+  .logo .mark{height:52px;width:auto;flex:none;display:block}
+  footer .logo .mark{height:44px}
   .nav ul{list-style:none;display:flex;gap:20px;margin-left:6px}
   .nav ul a{font-weight:700;font-size:1rem;color:var(--navy);padding:6px 2px;border-bottom:3px solid transparent;transition:border-color .2s;white-space:nowrap}
   .nav ul a:hover{border-color:var(--yellow)}
@@ -190,8 +191,7 @@
 <header>
   <div class="wrap nav">
     <a href="#" class="logo" aria-label="Novos Sorrisos, início">
-      <img class="tooth" src="logo.png" alt="">
-      Novos <span class="s">Sorrisos</span>
+      <img class="mark" src="logo-header.png" alt="Novos Sorrisos">
     </a>
     <button class="burger" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
@@ -433,7 +433,7 @@
       </div>
     </div>
     <div class="map">
-      <iframe title="Mapa da clínica" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-43.08%2C-22.84%2C-43.00%2C-22.80&layer=mapnik&marker=-22.827%2C-43.053"></iframe>
+      <iframe title="Mapa da clínica" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-43.0091%2C-22.8261%2C-42.9971%2C-22.8181&layer=mapnik&marker=-22.8221%2C-43.0031"></iframe>
     </div>
   </div>
 </section>
@@ -444,8 +444,7 @@
     <div class="fgrid">
       <div>
         <div class="logo">
-          <img class="tooth" src="logo.png" alt="">
-          Novos <span class="s" style="color:var(--green)">Sorrisos</span>
+          <img class="mark" src="logo-footer.png" alt="Novos Sorrisos">
         </div>
         <p>Cuidando do seu sorriso com carinho, respeito e excelência.</p>
         <div class="social">
