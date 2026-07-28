@@ -128,6 +128,9 @@
   .gitem span{position:absolute;bottom:0;left:0;right:0;padding:26px 18px 16px;color:#fff;font-weight:800;font-size:1.1rem;background:linear-gradient(transparent,rgba(0,32,96,.7))}
   .video-wrap{max-width:860px;margin:0 auto;border-radius:24px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 30px 60px rgba(0,32,96,.22);background:var(--navy)}
   .video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
+  .depo-videos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+  .depo-videos .vitem{border-radius:20px;overflow:hidden;aspect-ratio:9/16;box-shadow:0 16px 34px rgba(0,32,96,.16);background:var(--navy)}
+  .depo-videos video{width:100%;height:100%;object-fit:cover;display:block}
 
   /* CONTATO */
   .contact{background:var(--green-tint-2)}
@@ -168,7 +171,7 @@
     .hero h1{font-size:2.6rem}
     .hero-media{max-width:440px;margin:0 auto}
     .cards,.tcards{grid-template-columns:1fr 1fr}
-    .gallery{grid-template-columns:1fr 1fr}
+    .gallery,.depo-videos{grid-template-columns:1fr 1fr}
     .split .media{order:-1}
     .nav ul,.nav .phone{display:none}
     .burger{display:block}
@@ -179,7 +182,7 @@
     body{font-size:17px}
     .hero h1{font-size:2.2rem}
     .center h2{font-size:2rem}
-    .cards,.tcards,.gallery{grid-template-columns:1fr}
+    .cards,.tcards,.gallery,.depo-videos{grid-template-columns:1fr}
     .trust .grid{grid-template-columns:1fr}
     .trust .item + .item{border-left:0;border-top:1px solid rgba(255,255,255,.14)}
     .cta-band{padding:36px 26px}
@@ -282,7 +285,7 @@
       <a href="https://wa.me/5521966573573" class="btn btn-wa">Agende sua avaliação</a>
     </div>
     <div class="media">
-      <img alt="Equipe da clínica" src="https://loremflickr.com/800/640/dental,clinic?lock=12" data-fb="https://picsum.photos/seed/novossorrisos-equipe/800/640" onerror="if(this.src!==this.dataset.fb){this.src=this.dataset.fb}else{this.style.display='none'}">
+      <img alt="Equipe da Novos Sorrisos" src="historia.webp">
     </div>
   </div>
 </section>
@@ -389,6 +392,12 @@
         <div class="who"><span class="av">RC</span><div><b>Rosa Campos</b><span>61 anos • Clareamento</span></div></div>
       </div>
     </div>
+    <div class="depo-videos">
+      <div class="vitem"><video controls playsinline preload="metadata"><source src="https://zkjftokoqucyygfzqtdh.supabase.co/storage/v1/object/public/videos%20-%20novos%20sorrisos/depo1.mp4" type="video/mp4"></video></div>
+      <div class="vitem"><video controls playsinline preload="metadata"><source src="https://zkjftokoqucyygfzqtdh.supabase.co/storage/v1/object/public/videos%20-%20novos%20sorrisos/depo2.mp4" type="video/mp4"></video></div>
+      <div class="vitem"><video controls playsinline preload="metadata"><source src="https://zkjftokoqucyygfzqtdh.supabase.co/storage/v1/object/public/videos%20-%20novos%20sorrisos/depo3.mp4" type="video/mp4"></video></div>
+      <div class="vitem"><video controls playsinline preload="metadata"><source src="https://zkjftokoqucyygfzqtdh.supabase.co/storage/v1/object/public/videos%20-%20novos%20sorrisos/depo4.mp4" type="video/mp4"></video></div>
+    </div>
   </div>
 </section>
 
@@ -403,7 +412,7 @@
     </div>
     <div class="video-wrap">
       <video controls playsinline preload="metadata" poster="capa.jpeg">
-        <source src="https://zkjftokoqucyygfzqtdh.supabase.co/storage/v1/object/sign/videos%20-%20novos%20sorrisos/institucional.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80MDFjMDg4YS02NTYyLTQzOTQtYjQ1ZS1jMjI4YmVlODc4ZTMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ2aWRlb3MgLSBub3ZvcyBzb3JyaXNvcy9pbnN0aXR1Y2lvbmFsLm1wNCIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODUyMTAwNjQsImV4cCI6MjQxNTkzMDA2NH0.rJNb91ZQPoRu026z2jPrt4feCFXfKCMinX1kIrayEdY" type="video/mp4">
+        <source src="https://zkjftokoqucyygfzqtdh.supabase.co/storage/v1/object/public/videos%20-%20novos%20sorrisos/institucional.mp4" type="video/mp4">
       </video>
     </div>
   </div>
