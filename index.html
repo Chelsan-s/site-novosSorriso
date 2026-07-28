@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Novos Sorrisos — Clínica Odontológica</title>
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -38,7 +39,7 @@
   .nav{display:flex;align-items:center;gap:18px;height:82px}
   .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.3rem;color:var(--navy);white-space:nowrap;flex:none}
   .logo .s{color:var(--green)}
-  .logo .tooth{width:38px;height:38px;flex:none}
+  .logo .tooth{width:38px;height:38px;flex:none;object-fit:contain}
   .nav ul{list-style:none;display:flex;gap:20px;margin-left:6px}
   .nav ul a{font-weight:700;font-size:1rem;color:var(--navy);padding:6px 2px;border-bottom:3px solid transparent;transition:border-color .2s;white-space:nowrap}
   .nav ul a:hover{border-color:var(--yellow)}
@@ -189,10 +190,7 @@
 <header>
   <div class="wrap nav">
     <a href="#" class="logo" aria-label="Novos Sorrisos, início">
-      <svg class="tooth" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <path d="M14 42c-3 0-4-6-4.5-13C9 22 7 17 7 13c0-5 4-8 8-8 3 0 5 1.5 9 1.5S30 5 33 5c4 0 8 3 8 8 0 4-2 9-2.5 16C38 36 37 42 34 42c-4 0-3-11-10-11s-6 11-10 11Z" stroke="#009543" stroke-width="2.4" stroke-linejoin="round"/>
-        <path d="M9 11c4-5 12-4 16 0" stroke="#FFD200" stroke-width="3" stroke-linecap="round"/>
-      </svg>
+      <img class="tooth" src="logo.png" alt="">
       Novos <span class="s">Sorrisos</span>
     </a>
     <button class="burger" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">
@@ -417,7 +415,7 @@
       <h2>Será um prazer atender você</h2>
       <div class="row">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4"/></svg></span>
-        <div><b>Endereço</b><span>Rua Exemplo, 000 — Centro, São Gonçalo/RJ</span></div>
+        <div><b>Endereço</b><span>R. João Caetano, prédio 52, sala 504 — Alcântara, São Gonçalo/RJ, 24710-405 (em cima do antigo restaurante Dom Nato)</span></div>
       </div>
       <div class="row">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span>
@@ -446,10 +444,7 @@
     <div class="fgrid">
       <div>
         <div class="logo">
-          <svg class="tooth" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <path d="M14 42c-3 0-4-6-4.5-13C9 22 7 17 7 13c0-5 4-8 8-8 3 0 5 1.5 9 1.5S30 5 33 5c4 0 8 3 8 8 0 4-2 9-2.5 16C38 36 37 42 34 42c-4 0-3-11-10-11s-6 11-10 11Z" stroke="#009543" stroke-width="2.4" stroke-linejoin="round"/>
-            <path d="M9 11c4-5 12-4 16 0" stroke="#FFD200" stroke-width="3" stroke-linecap="round"/>
-          </svg>
+          <img class="tooth" src="logo.png" alt="">
           Novos <span class="s" style="color:var(--green)">Sorrisos</span>
         </div>
         <p>Cuidando do seu sorriso com carinho, respeito e excelência.</p>
@@ -471,8 +466,8 @@
       <div>
         <h4>Contato</h4>
         <ul>
-          <li>Rua Exemplo, 000 — Centro</li>
-          <li>São Gonçalo / RJ</li>
+          <li>R. João Caetano, 52, sala 504</li>
+          <li>Alcântara, São Gonçalo/RJ</li>
           <li><a href="tel:+5521966573573">(21) 96657-3573</a></li>
         </ul>
       </div>
