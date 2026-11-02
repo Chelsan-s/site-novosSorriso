@@ -193,9 +193,9 @@ p{max-width:62ch}
 /* 5. QUEM É */
 .quem{padding:110px 0}
 .quem .cartao{background:#fff;border-radius:var(--raio);padding:40px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:stretch;box-shadow:0 30px 60px rgba(0,24,69,.06)}
-.quem .foto{border-radius:28px;overflow:hidden;min-height:520px;background:var(--painel)}
+.quem .foto{border-radius:28px;overflow:hidden;aspect-ratio:4/5;align-self:center;background:var(--painel)}
 .quem .cartao > div:last-child{align-self:center;padding:16px 16px 16px 0}
-.quem .foto img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.quem .foto img{width:100%;height:100%;object-fit:cover;object-position:15% 50%}
 .quem p.texto{margin-top:22px;color:var(--suave);font-size:1.08rem}
 .pontos{list-style:none;display:grid;gap:22px;margin-top:34px}
 .pontos li{display:grid;grid-template-columns:16px 1fr;column-gap:16px}
@@ -282,7 +282,7 @@ details p{padding:0 0 22px;color:var(--suave);font-size:1.02rem}
   .hero .grade > div:first-child{order:0}
   .galeria{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .quem .cartao{grid-template-columns:minmax(0,1fr);padding:28px;gap:40px}
-  .quem .foto{min-height:0;aspect-ratio:4/5;max-width:460px}
+  .quem .foto{max-width:460px;aspect-ratio:1/1}
   .quem .cartao > div:last-child{padding:0}
   .passos ol{grid-template-columns:repeat(2,minmax(0,1fr))}
   .passos .pe{margin-top:56px}
@@ -455,7 +455,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="quem" aria-labelledby="t-quem">
   <div class="wrap">
     <div class="cartao">
-      <div class="foto"><img src="/drreile/dr-reile-consultorio.webp" width="924" height="1280" loading="lazy" alt="Dr. Reile Gomes de jaleco, em pé no consultório"></div>
+      <div class="foto"><img src="/drreile/dr-reile-sobre.webp" width="1000" height="852" loading="lazy" alt="Dr. Reile Gomes sorrindo, escrevendo à mesa do consultório"></div>
       <div>
         <span class="tag">Sobre o Dr. Reile Gomes</span>
         <h2 id="t-quem">Mais de 20 anos <span class="luz">transformando sorrisos</span> e vidas</h2>
