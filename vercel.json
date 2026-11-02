@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/cdn-cgi/trace", "destination": "/api/trace" }
+  ]
+}
