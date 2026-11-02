@@ -183,7 +183,8 @@ p{max-width:62ch}
 .galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:52px;text-align:left}
 .par{border-radius:26px;overflow:hidden;display:grid;gap:3px;background:#fff}
 .par .ph{position:relative;aspect-ratio:2/1;display:grid;place-items:center;background:#d3ddee;color:#56668a;font-size:.95rem}
-.par .ph span{position:absolute;top:14px;left:14px;font-size:.82rem;font-weight:600;padding:4px 12px;border-radius:999px;background:#fff;color:var(--tinta)}
+.par .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.par .ph span{z-index:1;position:absolute;top:14px;left:14px;font-size:.82rem;font-weight:600;padding:4px 12px;border-radius:999px;background:#fff;color:var(--tinta)}
 .par .ph.depois span{background:var(--navy);color:#fff}
 .galeria figcaption{margin-top:16px}
 .galeria figcaption b{display:block;font-weight:600;font-size:1.1rem}
@@ -440,7 +441,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- Trocar cada par pelas fotos reais (com autorização assinada) e legenda curta do caso -->
     <div class="galeria">
-      <figure><div class="par"><div class="ph"><span>Antes</span>foto a definir</div><div class="ph depois"><span>Depois</span>foto a definir</div></div><figcaption><b>Caso 1</b><small>Legenda a confirmar</small></figcaption></figure>
+      <figure><div class="par"><div class="ph"><img src="/drreile/caso1-antes.webp" width="800" height="400" loading="lazy" alt="Antes: dentes superiores desgastados e vários dentes ausentes"><span>Antes</span></div><div class="ph depois"><img src="/drreile/caso1-depois.webp" width="800" height="400" loading="lazy" alt="Depois: dentes superiores e inferiores fixos, com sorriso completo"><span>Depois</span></div></div><figcaption><b>Caso 1 · Reabilitação oral</b><small>Descrição do caso a confirmar</small></figcaption></figure>
       <figure><div class="par"><div class="ph"><span>Antes</span>foto a definir</div><div class="ph depois"><span>Depois</span>foto a definir</div></div><figcaption><b>Caso 2</b><small>Legenda a confirmar</small></figcaption></figure>
       <figure><div class="par"><div class="ph"><span>Antes</span>foto a definir</div><div class="ph depois"><span>Depois</span>foto a definir</div></div><figcaption><b>Caso 3</b><small>Legenda a confirmar</small></figcaption></figure>
     </div>
