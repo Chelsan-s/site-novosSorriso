@@ -89,7 +89,7 @@ p{max-width:62ch}
 .lado-texto{color:var(--suave);font-size:1.05rem;max-width:36ch}
 
 /* Botões */
-.btn{display:inline-flex;align-items:center;gap:12px;background:var(--verde);color:#fff;font-family:var(--sans);font-weight:700;font-size:1.08rem;line-height:1.2;text-decoration:none;padding:18px 30px;border-radius:999px;white-space:nowrap;transition:background-color .15s ease-out}
+.btn{display:inline-flex;align-items:center;gap:12px;border:0;cursor:pointer;background:var(--verde);color:#fff;font-family:var(--sans);font-weight:700;font-size:1.08rem;line-height:1.2;text-decoration:none;padding:18px 30px;border-radius:999px;white-space:nowrap;transition:background-color .15s ease-out}
 .btn:hover{background:var(--verde-escuro)}
 .btn svg{width:22px;height:22px;flex:none}
 .acao{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:36px}
@@ -255,14 +255,37 @@ details p{padding:0 0 22px;color:var(--suave);font-size:1.02rem}
 .contatos a{text-decoration:none}
 .contatos a:hover{text-decoration:underline}
 .final .marca-dagua{position:absolute;left:0;right:0;bottom:-0.18em;text-align:center;font-weight:700;font-size:clamp(5rem,18vw,15rem);line-height:1;letter-spacing:-.04em;color:rgba(255,255,255,.08);pointer-events:none;user-select:none;white-space:nowrap}
+/* Formulário de avaliação */
+.final .wrap{align-items:start}
+.final .wrap{grid-template-areas:"texto form" "contatos form";grid-template-rows:auto 1fr}
+.final .wrap > div:first-child{grid-area:texto}
+.final .contatos{grid-area:contatos;margin-top:20px}
+.final .cartao-form{grid-area:form}
+.cartao-form{scroll-margin-top:88px;background:#fff;color:var(--tinta);border-radius:26px;padding:34px 32px 30px;box-shadow:0 30px 60px rgba(0,40,20,.25)}
+.cartao-form h3{font-size:1.5rem;letter-spacing:-.02em;color:var(--tinta)}
+.sub-form{margin-top:8px;color:var(--suave);font-size:1rem}
+.campo{display:block;margin-top:18px}
+.campo > span{display:block;font-weight:600;font-size:1rem;margin-bottom:7px}
+.campo em{font-style:normal;font-weight:400;color:var(--suave)}
+.campo input,.campo select,.campo textarea{width:100%;font:inherit;font-size:1.05rem;color:var(--tinta);background:#f6f8fb;border:1.5px solid #cdd7e6;border-radius:14px;padding:14px 16px;transition:border-color .15s ease-out}
+.campo textarea{resize:vertical;min-height:84px}
+.campo select{appearance:none;-webkit-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23002060' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--navy);background-color:#fff}
+.campo input[aria-invalid="true"],.campo select[aria-invalid="true"]{border-color:#b42318}
+.final .cartao-form .btn{width:100%;justify-content:center;margin-top:24px;background:var(--verde);color:#fff}
+.final .cartao-form .btn:hover{background:var(--verde-escuro)}
+.cartao-form .btn[disabled]{opacity:.7;cursor:wait}
+.erro{margin-top:16px;color:#b42318;font-weight:600;font-size:.98rem}
+.lgpd{margin-top:14px;font-size:.88rem;line-height:1.5;color:var(--suave)}
+.lgpd a{color:var(--navy)}
+.form-fim{padding:12px 0}
+.form-fim h3{font-size:1.5rem}
+.form-fim p{margin-top:12px;color:var(--suave);font-size:1.05rem}
+.form-fim .btn{margin-top:22px}
+.form-fim:focus{outline:none}
 .rodape{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding:26px 0 34px;font-size:.92rem;color:var(--suave)}
 .rodape a{color:var(--navy)}
 
-/* WhatsApp flutuante */
-.fab{position:fixed;right:20px;bottom:20px;z-index:var(--z-fab);width:60px;height:60px;border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,40,20,.3);transition:background-color .15s ease-out,opacity .2s ease-out,visibility .2s}
-.fab:hover{background:var(--verde-escuro)}
-.fab.oculto{opacity:0;visibility:hidden}
-.fab svg{width:32px;height:32px}
 
 /* Responsivo */
 @media (max-width:1080px){
@@ -286,6 +309,7 @@ details p{padding:0 0 22px;color:var(--suave);font-size:1.02rem}
   .passos ol{grid-template-columns:repeat(2,minmax(0,1fr))}
   .passos .pe{margin-top:56px}
   .faq .wrap,.final .wrap,.local .grade{grid-template-columns:minmax(0,1fr)}
+  .final .wrap{grid-template-areas:"texto" "form" "contatos";grid-template-rows:auto}
   .barra-cta{flex-wrap:wrap;border-radius:26px;transform:translateY(40%);padding:18px}
   .barra-cta .btn{width:100%;justify-content:center}
 }
@@ -319,6 +343,7 @@ details p{padding:0 0 22px;color:var(--suave);font-size:1.02rem}
   .identifica{padding-bottom:32px}
   .tratamentos{padding-top:72px}
   .mapa-trat .centro-img{max-width:300px;box-shadow:0 0 0 10px rgba(26,67,150,.08),0 0 50px rgba(26,67,150,.3)}
+  .cartao-form{padding:26px 20px 24px}
   .acao .btn{width:100%;justify-content:center;white-space:normal;text-align:center;text-wrap:balance;padding:17px 20px;font-size:1.04rem}
   .barra b{font-size:1rem}
 }
@@ -334,7 +359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="barra escuro" id="barra" aria-hidden="true">
   <div class="wrap">
     <b>Dr. Reile Gomes</b>
-    <a class="btn" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="barra" tabindex="-1"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Avaliar meu caso</a>
+    <a class="btn" href="#avaliacao" data-cta="barra" tabindex="-1">Avaliar meu caso</a>
   </div>
 </div>
 
@@ -346,8 +371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav aria-label="Topo">
       <b>Dr. Reile Gomes</b>
       <div class="dir">
-        <a class="pilula" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="topo">Agendar avaliação</a>
-        <a class="circ" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="topo-icone" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg></a>
+        <a class="pilula" href="#avaliacao" data-cta="topo">Agendar avaliação</a>
       </div>
     </nav>
     <div class="grade">
@@ -357,7 +381,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- CFO: a especialidade registrada no CRO é Ortodontia. Em reabilitação oral, usar sempre "atuação", nunca "especialista" nem "reabilitador" como título. -->
         <p class="sub">O Dr. Reile Gomes atua em reabilitação oral: devolve os dentes e a mastigação de quem já perdeu vários dentes, usa dentadura ou passou por tratamentos que não deram certo.</p>
         <div class="acao">
-          <a class="btn" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="hero"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Quero avaliar meu caso</a>
+          <a class="btn" href="#avaliacao" data-cta="hero">Quero avaliar meu caso</a>
           <small>Avaliação com hora marcada</small>
         </div>
         <div class="numeros">
@@ -394,7 +418,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="barra-cta escuro">
       <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3.5c-2.4 0-4 1.9-4 4.6 0 2.3 1 3.6 1.6 5.4.6 1.9.7 3.6 1.1 5.4.3 1.3.8 1.9 1.6 1.9 1.4 0 1.6-2.4 2.1-4.3.3-1.1.8-1.7 2.1-1.7s1.8.6 2.1 1.7c.5 1.9.7 4.3 2.1 4.3.8 0 1.3-.6 1.6-1.9.4-1.8.5-3.5 1.1-5.4.6-1.8 1.6-3.1 1.6-5.4 0-2.7-1.6-4.6-4-4.6-1.8 0-2.7 1-4.5 1s-2.7-1-4.5-1Z"/></svg></i>
       <p id="fechamento" aria-live="polite">Se você marcou pelo menos um, a avaliação com o Dr. Reile Gomes é para você.</p>
-      <a class="btn" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="identifica"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Quero resolver meu caso</a>
+      <a class="btn" href="#avaliacao" data-cta="identifica">Quero resolver meu caso</a>
     </div>
   </div>
 </section>
@@ -424,7 +448,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="acao centro">
-      <a class="btn" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="tratamentos"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Quero saber qual é o melhor para mim</a>
+      <a class="btn" href="#avaliacao" data-cta="tratamentos">Quero saber qual é o melhor para mim</a>
     </div>
   </div>
 </section>
@@ -444,7 +468,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="nota-cfo">Imagens publicadas com autorização dos pacientes, conforme as normas do Conselho Federal de Odontologia. Cada caso é único e o resultado varia de pessoa para pessoa.</p>
     <div class="acao">
-      <a class="btn" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="casos"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Quero um resultado assim</a>
+      <a class="btn" href="#avaliacao" data-cta="casos">Quero um resultado assim</a>
     </div>
   </div>
 </section>
@@ -465,7 +489,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="ponto"></span><b>Registro profissional</b><span>CRO-RJ 33.356 · Atuação em reabilitação oral</span></li>
         </ul>
         <div class="acao">
-          <a class="btn" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="quem"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Quero ser atendido pelo Dr. Reile Gomes</a>
+          <a class="btn" href="#avaliacao" data-cta="quem">Quero ser atendido pelo Dr. Reile Gomes</a>
         </div>
       </div>
     </div>
@@ -505,7 +529,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </blockquote>
     </div>
     <div class="acao">
-      <a class="btn" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="depoimentos"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Quero ser o próximo</a>
+      <a class="btn" href="#avaliacao" data-cta="depoimentos">Quero ser o próximo</a>
     </div>
   </div>
 </section>
@@ -567,17 +591,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="tag">Agendamento</span>
       <h2 id="t-final">Você não precisa mais <span class="luz">esconder o sorriso.</span></h2>
       <p class="texto">Agende sua avaliação com o Dr. Reile Gomes e descubra qual tratamento devolve seus dentes fixos.</p>
-      <div class="acao">
-        <a class="btn" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="final"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Quero avaliar meu caso</a>
-      </div>
     </div>
     <ul class="contatos">
-      <li><small>WhatsApp</small><span><a href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="rodape">(21) 96657-3573</a></span></li>
-      <li><small>Telefone</small><span><a href="tel:+552126059626">(21) 2605-9626</a></span></li>
-      <li><small>Endereço</small><span>R. João Caetano, 52, sala 504 · Alcântara, São Gonçalo/RJ</span></li>
-      <li><small>Horário</small><span>Segunda a sexta: horários sob consulta · Sábados: sob consulta, conforme a agenda</span></li>
-      <li><small>Responsável técnico</small><span>Dr. Reile Gomes · CRO-RJ 33.356 · Atuação em reabilitação oral</span></li>
+        <li><small>WhatsApp</small><span><a href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="rodape">(21) 96657-3573</a></span></li>
+        <li><small>Telefone</small><span><a href="tel:+552126059626">(21) 2605-9626</a></span></li>
+        <li><small>Endereço</small><span>R. João Caetano, 52, sala 504 · Alcântara, São Gonçalo/RJ</span></li>
+        <li><small>Horário</small><span>Segunda a sexta: horários sob consulta · Sábados: sob consulta, conforme a agenda</span></li>
+        <li><small>Responsável técnico</small><span>Dr. Reile Gomes · CRO-RJ 33.356 · Atuação em reabilitação oral</span></li>
     </ul>
+    <div class="cartao-form" id="avaliacao">
+      <form id="form-lead" novalidate>
+        <h3>Quero avaliar meu caso</h3>
+        <p class="sub-form">Preencha e a equipe do Dr. Reile Gomes chama você no WhatsApp para marcar a avaliação.</p>
+        <label class="campo"><span>Seu nome</span>
+          <input name="nome" type="text" autocomplete="name" maxlength="80" required></label>
+        <label class="campo"><span>WhatsApp com DDD</span>
+          <input name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(21) 99999-9999" maxlength="16" required></label>
+        <label class="campo"><span>O que está acontecendo?</span>
+          <select name="motivo" required>
+            <option value="">Escolha uma opção</option>
+            <option>Minha dentadura solta, machuca ou atrapalha para comer</option>
+            <option>Perdi um ou mais dentes</option>
+            <option>Quero trocar a dentadura por dentes fixos</option>
+            <option>Já fiz um tratamento que não deu certo</option>
+            <option>Disseram que meu caso é difícil</option>
+            <option>Outro motivo</option>
+          </select></label>
+        <label class="campo"><span>Quer contar mais? <em>(opcional)</em></span>
+          <textarea name="detalhes" rows="3" maxlength="500"></textarea></label>
+        <p class="erro" id="form-erro" role="alert" hidden></p>
+        <button class="btn" type="submit" id="form-botao">Quero avaliar meu caso</button>
+        <p class="lgpd">Ao enviar, você autoriza a Novos Sorrisos a usar esses dados para falar com você pelo WhatsApp sobre a sua avaliação. Veja a <a href="/privacidade/">Política de privacidade</a>.</p>
+      </form>
+      <div class="form-fim" id="form-ok" hidden tabindex="-1">
+        <h3 id="ok-titulo">Recebemos seu contato!</h3>
+        <p>A equipe do Dr. Reile Gomes vai chamar você no WhatsApp em breve para marcar a avaliação.</p>
+      </div>
+      <div class="form-fim" id="form-falha" hidden tabindex="-1">
+        <h3>Não conseguimos enviar agora.</h3>
+        <p>Para não perder seu contato, fale direto com a equipe pelo WhatsApp. A mensagem já vai preenchida.</p>
+        <a class="btn" id="falha-wa" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="form-falha">Falar no WhatsApp</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -588,7 +643,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span><a href="/privacidade/">Política de privacidade</a> · <a href="/">novossorrisos.com.br</a></span>
 </footer>
 
-<a class="fab oculto" id="fab" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." data-cta="flutuante" aria-label="Falar com o Dr. Reile Gomes no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg></a>
 
 <script>
 (function(){
@@ -601,15 +655,196 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       fim.textContent = n>0 ? 'Você marcou '+n+'. A avaliação com o Dr. Reile Gomes é para você.' : base;
     });
   }
-  var fab=document.getElementById('fab'), barra=document.getElementById('barra'), hero=document.getElementById('hero');
-  if(!hero||!('IntersectionObserver' in window)){ fab&&fab.classList.remove('oculto'); barra&&barra.classList.add('visivel'); return; }
+  var barra=document.getElementById('barra'), hero=document.getElementById('hero');
+  if(!hero||!barra||!('IntersectionObserver' in window)){ barra&&barra.classList.add('visivel'); return; }
   new IntersectionObserver(function(e){
     var dentro=e[0].isIntersecting;
-    fab.classList.toggle('oculto',dentro);
     barra.classList.toggle('visivel',!dentro);
     barra.setAttribute('aria-hidden',dentro?'true':'false');
     barra.querySelector('a').tabIndex = dentro ? -1 : 0;
   },{threshold:0.05}).observe(hero);
+})();
+</script>
+<!-- Captação de leads: bloco padrão do kit (bloco-captacao-leads.html), só URL e tag preenchidas -->
+  <script id="lead-n8n" data-tag="lp-drreile-v1">
+    // Captura UTMs e dados do navegador, e envia o lead ao webhook do n8n
+    (function () {
+      var WEBHOOK = 'https://nwh.chelsan.com.br/webhook/leads';
+      // Tag fixa que identifica esta página no webhook único
+      var TAG = (document.currentScript && document.currentScript.dataset.tag) || '';
+      var CHAVE = 'lead_atribuicao';
+      var VALIDADE = 90 * 24 * 60 * 60 * 1000;
+      var PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id',
+        'gclid', 'gbraid', 'wbraid', 'fbclid', 'ttclid', 'msclkid'];
+
+      function ler(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
+      function gravar(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+      function uuid() {
+        if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          var r = Math.random() * 16 | 0; return (c === 'x' ? r : (r & 3 | 8)).toString(16);
+        });
+      }
+      function cookie(nome) {
+        var m = document.cookie.match(new RegExp('(?:^|; )' + nome + '=([^;]*)'));
+        return m ? decodeURIComponent(m[1]) : '';
+      }
+
+      // Atribuição: primeiro e último toque, guardados por 90 dias
+      var url = new URLSearchParams(location.search);
+      var toqueAtual = {};
+      PARAMS.forEach(function (p) { if (url.get(p)) toqueAtual[p] = url.get(p); });
+      var salvo = ler(CHAVE);
+      if (!salvo || Date.now() - salvo.criado_em > VALIDADE) salvo = null;
+      if (Object.keys(toqueAtual).length) {
+        toqueAtual.landing = location.href;
+        toqueAtual.referrer = document.referrer;
+        toqueAtual.em = new Date().toISOString();
+        salvo = { criado_em: salvo ? salvo.criado_em : Date.now(), primeiro: salvo ? salvo.primeiro : toqueAtual, ultimo: toqueAtual };
+        gravar(CHAVE, salvo);
+      } else if (!salvo) {
+        var direto = { landing: location.href, referrer: document.referrer, em: new Date().toISOString() };
+        salvo = { criado_em: Date.now(), primeiro: direto, ultimo: direto };
+        gravar(CHAVE, salvo);
+      }
+
+      var visitante = ler('lead_visitor_id');
+      if (!visitante) { visitante = uuid(); gravar('lead_visitor_id', visitante); }
+
+      function dispositivo() {
+        var n = navigator;
+        return {
+          user_agent: n.userAgent,
+          idioma: n.language || '',
+          idiomas: (n.languages || []).join(','),
+          fuso_horario: (Intl.DateTimeFormat().resolvedOptions().timeZone) || '',
+          fuso_offset_min: String(new Date().getTimezoneOffset()),
+          plataforma: (n.userAgentData && n.userAgentData.platform) || n.platform || '',
+          mobile: String(n.userAgentData ? n.userAgentData.mobile : /Mobi|Android/i.test(n.userAgent)),
+          tela: screen.width + 'x' + screen.height,
+          viewport: innerWidth + 'x' + innerHeight,
+          pixel_ratio: String(window.devicePixelRatio || 1),
+          profundidade_cor: String(screen.colorDepth),
+          nucleos_cpu: String(n.hardwareConcurrency || ''),
+          memoria_gb: String(n.deviceMemory || ''),
+          toque_max: String(n.maxTouchPoints || 0),
+          cookies_ativos: String(n.cookieEnabled)
+        };
+      }
+
+      function hash(texto) {
+        if (!(window.crypto && crypto.subtle && window.TextEncoder)) return Promise.resolve('');
+        return crypto.subtle.digest('SHA-256', new TextEncoder().encode(texto)).then(function (b) {
+          return Array.from(new Uint8Array(b)).map(function (x) { return x.toString(16).padStart(2, '0'); }).join('');
+        }).catch(function () { return ''; });
+      }
+
+      // IP e país vêm do /cdn-cgi/trace da própria Cloudflare (mesmo domínio, sem serviço de terceiros)
+      function rede() {
+        var ctrl = window.AbortController ? new AbortController() : null;
+        if (ctrl) setTimeout(function () { ctrl.abort(); }, 1500);
+        return fetch('/cdn-cgi/trace', { cache: 'no-store', signal: ctrl ? ctrl.signal : undefined })
+          .then(function (r) { return r.ok ? r.text() : ''; })
+          .then(function (t) {
+            if (t.indexOf('ip=') === -1) return {};
+            var o = {};
+            t.split('\n').forEach(function (l) { var i = l.indexOf('='); if (i > 0) o[l.slice(0, i)] = l.slice(i + 1); });
+            return { ip: o.ip || '', pais: o.loc || '', cloudflare_colo: o.colo || '' };
+          }).catch(function () { return {}; });
+      }
+
+      window.enviarLeadN8n = function (campos) {
+        var dados = {};
+        Object.keys(campos).forEach(function (k) { dados[k] = campos[k]; });
+        if (campos.whatsapp) dados.whatsapp_digitos = String(campos.whatsapp).replace(/\D/g, '');
+
+        dados.tag = TAG;
+        dados.event_id = uuid();
+        dados.visitor_id = visitante;
+        dados.pagina = location.pathname.split('/').filter(Boolean)[0] || location.hostname;
+        dados.pagina_url = location.href;
+        dados.pagina_titulo = document.title;
+        dados.enviado_em = new Date().toISOString();
+
+        // Último toque nos campos utm_*; primeiro toque em first_*
+        var u = (salvo && salvo.ultimo) || {}, p = (salvo && salvo.primeiro) || {};
+        PARAMS.forEach(function (k) { dados[k] = u[k] || ''; dados['first_' + k] = p[k] || ''; });
+        dados.landing_inicial = p.landing || '';
+        dados.referrer_inicial = p.referrer || '';
+        dados.referrer = document.referrer;
+
+        var fbc = cookie('_fbc');
+        if (!fbc && u.fbclid) fbc = 'fb.1.' + Date.now() + '.' + u.fbclid;
+        dados.fbp = cookie('_fbp');
+        dados.fbc = fbc;
+        dados.ga_client_id = cookie('_ga');
+
+        var d = dispositivo();
+        Object.keys(d).forEach(function (k) { dados['fp_' + k] = d[k]; });
+
+        var base = [d.user_agent, d.idiomas, d.fuso_horario, d.plataforma, d.tela, d.pixel_ratio,
+          d.profundidade_cor, d.nucleos_cpu, d.memoria_gb, d.toque_max].join('|');
+        return Promise.all([hash(base), rede()]).then(function (r) {
+          dados.fp_hash = r[0];
+          dados.fp_ip = r[1].ip || '';
+          dados.fp_pais = r[1].pais || '';
+          dados.fp_cloudflare_colo = r[1].cloudflare_colo || '';
+          // form-urlencoded evita o preflight de CORS; keepalive garante o envio mesmo abrindo o WhatsApp
+          return fetch(WEBHOOK, { method: 'POST', mode: 'no-cors', keepalive: true, body: new URLSearchParams(dados) });
+        }).catch(function () {});
+      };
+    })();
+  </script>
+
+<!-- Envio do formulário -->
+<script>
+(function(){
+  var TAG='lp-drreile-v1';
+  var WA_BASE='https://wa.me/5521966573573?text=';
+  /* Formulário */
+  var form=document.getElementById('form-lead'); if(!form) return;
+  var erro=document.getElementById('form-erro'), botao=document.getElementById('form-botao');
+  var tel=form.elements.whatsapp;
+  function digitos(v){ v=(v||'').replace(/\D/g,''); if(v.length>11&&v.indexOf('55')===0) v=v.slice(2); return v.replace(/^0+/,''); }
+  function mascara(d){
+    d=d.slice(0,11);
+    if(d.length<=2) return d.length?'('+d:'';
+    if(d.length<=6) return '('+d.slice(0,2)+') '+d.slice(2);
+    if(d.length<=10) return '('+d.slice(0,2)+') '+d.slice(2,6)+'-'+d.slice(6);
+    return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7);
+  }
+  tel.addEventListener('input',function(){ tel.value=mascara(digitos(tel.value)); });
+
+  function marcar(el,ruim){ el.setAttribute('aria-invalid',ruim?'true':'false'); }
+  function mostrarErro(msg,el){ erro.textContent=msg; erro.hidden=false; if(el) el.focus(); }
+
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var nome=form.elements.nome.value.trim(), d=digitos(tel.value), motivo=form.elements.motivo.value, detalhes=form.elements.detalhes.value.trim();
+    marcar(form.elements.nome,false); marcar(tel,false); marcar(form.elements.motivo,false); erro.hidden=true;
+    if(nome.length<2){ marcar(form.elements.nome,true); return mostrarErro('Escreva o seu nome.',form.elements.nome); }
+    if(d.length<10||d.length>11){ marcar(tel,true); return mostrarErro('Confira o número de WhatsApp com DDD.',tel); }
+    if(!motivo){ marcar(form.elements.motivo,true); return mostrarErro('Escolha o que está acontecendo.',form.elements.motivo); }
+
+    botao.disabled=true; botao.textContent='Enviando…';
+    var dados={nome:nome,whatsapp:mascara(d),motivo:motivo};
+    if(detalhes) dados.detalhes=detalhes;
+    Promise.resolve(window.enviarLeadN8n ? window.enviarLeadN8n(dados) : null).then(function(res){
+      form.hidden=true;
+      if(res){
+        var ok=document.getElementById('form-ok');
+        document.getElementById('ok-titulo').textContent='Recebemos seu contato, '+nome.split(' ')[0]+'!';
+        ok.hidden=false; ok.focus();
+        try{ window.dataLayer=window.dataLayer||[]; dataLayer.push({event:'lead_enviado',lead_tag:TAG}); }catch(e){}
+        try{ window.fbq&&fbq('track','Lead',{content_name:TAG}); }catch(e){}
+      }else{
+        var falha=document.getElementById('form-falha');
+        var msg='Olá, vim pela página do Dr. Reile Gomes e quero avaliar meu caso. Meu nome é '+nome+'. Motivo: '+motivo+(detalhes?'. '+detalhes:'');
+        document.getElementById('falha-wa').href=WA_BASE+encodeURIComponent(msg);
+        falha.hidden=false; falha.focus();
+      }
+    });
+  });
 })();
 </script>
 </body>
