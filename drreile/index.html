@@ -42,8 +42,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1398643999140541&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<!-- Remover o noindex quando os antes/depois estiverem publicados -->
-<meta name="robots" content="noindex">
 <title>Dr. Reile Gomes · Prótese sobre implante em São Gonçalo</title>
 <meta name="description" content="Dentes fixos de novo, com quem tem mais de 20 anos resolvendo casos complexos de perda de dentes. Prótese sobre implante, prótese fixa e reabilitação oral em São Gonçalo (RJ).">
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -183,7 +181,8 @@ p{max-width:62ch}
 .galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:52px;text-align:left}
 .par{border-radius:26px;overflow:hidden;display:grid;gap:3px;background:#fff}
 .par .ph{position:relative;aspect-ratio:2/1;display:grid;place-items:center;background:#d3ddee;color:#56668a;font-size:.95rem}
-.par .ph span{position:absolute;top:14px;left:14px;font-size:.82rem;font-weight:600;padding:4px 12px;border-radius:999px;background:#fff;color:var(--tinta)}
+.par .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.par .ph span{z-index:1;position:absolute;top:14px;left:14px;font-size:.82rem;font-weight:600;padding:4px 12px;border-radius:999px;background:#fff;color:var(--tinta)}
 .par .ph.depois span{background:var(--navy);color:#fff}
 .galeria figcaption{margin-top:16px}
 .galeria figcaption b{display:block;font-weight:600;font-size:1.1rem}
@@ -438,11 +437,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 id="t-casos">Casos difíceis são <span class="luz">a especialidade</span> do Dr. Reile Gomes</h2>
       <p>Mais de 20 anos atendendo pacientes com perdas grandes de dentes, pouco osso ou próteses antigas que não funcionavam mais.</p>
     </div>
-    <!-- Trocar cada par pelas fotos reais (com autorização assinada) e legenda curta do caso -->
     <div class="galeria">
-      <figure><div class="par"><div class="ph"><span>Antes</span>foto a definir</div><div class="ph depois"><span>Depois</span>foto a definir</div></div><figcaption><b>Caso 1</b><small>Legenda a confirmar</small></figcaption></figure>
-      <figure><div class="par"><div class="ph"><span>Antes</span>foto a definir</div><div class="ph depois"><span>Depois</span>foto a definir</div></div><figcaption><b>Caso 2</b><small>Legenda a confirmar</small></figcaption></figure>
-      <figure><div class="par"><div class="ph"><span>Antes</span>foto a definir</div><div class="ph depois"><span>Depois</span>foto a definir</div></div><figcaption><b>Caso 3</b><small>Legenda a confirmar</small></figcaption></figure>
+      <figure><div class="par"><div class="ph"><img src="/drreile/caso1-antes.webp" width="800" height="400" loading="lazy" alt="Antes: dentes superiores desgastados e vários dentes ausentes"><span>Antes</span></div><div class="ph depois"><img src="/drreile/caso1-depois.webp" width="800" height="400" loading="lazy" alt="Depois: dentes superiores e inferiores fixos, com sorriso completo"><span>Depois</span></div></div><figcaption><b>Caso 1</b><small>Reabilitação oral</small></figcaption></figure>
+      <figure><div class="par"><div class="ph"><img src="/drreile/caso2-antes.webp" width="800" height="400" loading="lazy" alt="Antes: dentes da frente com espaços e um dente ausente"><span>Antes</span></div><div class="ph depois"><img src="/drreile/caso2-depois.webp" width="800" height="400" loading="lazy" alt="Depois: dentes da frente completos e alinhados"><span>Depois</span></div></div><figcaption><b>Caso 2</b><small>Reabilitação oral</small></figcaption></figure>
+      <figure><div class="par"><div class="ph"><img src="/drreile/caso3-antes.webp" width="800" height="400" loading="lazy" alt="Antes: vários dentes ausentes na arcada superior"><span>Antes</span></div><div class="ph depois"><img src="/drreile/caso3-depois.webp" width="800" height="400" loading="lazy" alt="Depois: dentes superiores fixos e sorriso completo"><span>Depois</span></div></div><figcaption><b>Caso 3</b><small>Reabilitação oral</small></figcaption></figure>
     </div>
     <p class="nota-cfo">Imagens publicadas com autorização dos pacientes, conforme as normas do Conselho Federal de Odontologia. Cada caso é único e o resultado varia de pessoa para pessoa.</p>
     <div class="acao">
