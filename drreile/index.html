@@ -42,7 +42,7 @@ src="https://www.facebook.com/tr?id=1398643999140541&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Remover o noindex quando CRO, fotos e antes/depois estiverem publicados -->
+<!-- Remover o noindex quando os antes/depois estiverem publicados -->
 <meta name="robots" content="noindex">
 <title>Dr. Reile Gomes · Prótese sobre implante em São Gonçalo</title>
 <meta name="description" content="Dentes fixos de novo, com quem tem mais de 20 anos resolvendo casos complexos de perda de dentes. Prótese sobre implante, prótese fixa e reabilitação oral em São Gonçalo (RJ).">
@@ -112,7 +112,7 @@ p{max-width:62ch}
 .provas li::before{content:"";flex:none;width:9px;height:9px;background:var(--verde);transform:translateY(-2px)}
 .retrato{position:relative;margin-top:8px}
 .retrato .foto{aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:var(--superficie)}
-.retrato img{width:100%;height:100%;object-fit:cover;object-position:40% 20%}
+.retrato img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .selo{position:absolute;left:-22px;bottom:96px;background:var(--amarelo);color:var(--navy);padding:14px 18px 12px;border-radius:4px;transform:rotate(-3deg);box-shadow:0 10px 24px rgba(0,32,96,.18);line-height:1}
 .selo b{display:block;font-family:var(--serif);font-size:2.4rem;font-weight:700}
 .selo span{display:block;font-size:.95rem;font-weight:700;margin-top:4px}
@@ -165,7 +165,8 @@ p{max-width:62ch}
 /* 5. Quem é */
 .quem{padding:104px 0}
 .quem .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:center}
-.quem .pendente{aspect-ratio:4/5}
+.foto-quem{aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:var(--superficie)}
+.foto-quem img{width:100%;height:100%;object-fit:cover;object-position:40% 15%}
 .quem p{margin-top:20px;font-size:1.12rem}
 .selos{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:32px;border-top:1px solid var(--fio);border-bottom:1px solid var(--fio)}
 .selos li{padding:16px 18px 16px 0;font-weight:700;color:var(--navy);font-size:1.02rem;line-height:1.35}
@@ -230,7 +231,7 @@ details p{padding:0 0 26px;color:var(--suave);font-size:1.08rem}
   .linha{grid-template-columns:minmax(0,1fr);gap:10px}
   .galeria{grid-template-columns:repeat(2,minmax(0,1fr))}
   .passos ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 28px}
-  .quem .pendente{max-width:420px}
+  .foto-quem{max-width:420px}
   .rodape .wrap{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:600px){
@@ -247,7 +248,7 @@ details p{padding:0 0 26px;color:var(--suave);font-size:1.08rem}
   .selo{left:-8px;bottom:72px}
   .selo b{font-size:2rem}
   .galeria,.passos ol{grid-template-columns:minmax(0,1fr)}
-  .quem .pendente{aspect-ratio:4/3}
+  .foto-quem{aspect-ratio:1/1}
   .acao .btn{width:100%;justify-content:center;white-space:normal;text-align:center;text-wrap:balance;padding:17px 18px;font-size:1.05rem}
   .final .btn{font-size:1.1rem;padding:19px 24px}
   .selos{grid-template-columns:minmax(0,1fr)}
@@ -283,8 +284,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <p class="etiqueta"><b>São Gonçalo</b> · Prótese sobre implante e reabilitação oral</p>
       <h1>Volte a mastigar e sorrir com dentes fixos, com quem tem mais de 20 anos de experiência.</h1>
-      <!-- CFO: "especialista" só se a especialidade estiver registrada; senão, "com atuação em" -->
-      <p class="sub">O Dr. Reile Gomes é especialista em devolver os dentes e a mastigação de quem já perdeu vários dentes, usa dentadura ou passou por tratamentos que não deram certo.</p>
+      <!-- CFO: a especialidade registrada é Ortodontia. Em reabilitação oral, usar sempre "atuação", nunca "especialista". -->
+      <p class="sub">O Dr. Reile Gomes atua em reabilitação oral: devolve os dentes e a mastigação de quem já perdeu vários dentes, usa dentadura ou passou por tratamentos que não deram certo.</p>
       <ul class="provas">
         <li>Mais de 20 anos de formado</li>
         <li>Experiência em casos complexos de perda de dentes</li>
@@ -296,10 +297,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <figure class="retrato">
-      <!-- Foto provisória (recorte de historia.webp). Trocar pela foto profissional de frente. -->
-      <div class="foto"><img src="/drreile/dr-reile.webp" width="624" height="848" alt="Dr. Reile Gomes, de jaleco, na recepção da clínica" fetchpriority="high"></div>
+      <div class="foto"><img src="/drreile/dr-reile-hero.webp" width="502" height="628" alt="Dr. Reile Gomes sorrindo, sentado à mesa do consultório" fetchpriority="high"></div>
       <div class="selo" aria-hidden="true"><b>+20</b><span>anos de formado</span></div>
-      <figcaption><b>Dr. Reile Gomes</b> · CRO-RJ <span class="tbd">nº a confirmar</span> · <span class="tbd">especialidade a confirmar</span></figcaption>
+      <figcaption><b>Dr. Reile Gomes</b> · CRO-RJ 33.356 · Especialista em Ortodontia</figcaption>
     </figure>
   </div>
 </section>
@@ -337,8 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="linha">
       <h3>Prótese fixa sem pino</h3>
-      <!-- CONFIRMAR descrição técnica com o Dr. Reile -->
-      <p>Uma opção de dente fixo para quem não pode ou não quer colocar implante, quando o caso permite.</p>
+      <p>Repõe dentes perdidos ou muito danificados com uma prótese fixa, sem precisar colocar pino dentro da raiz. É planejada para o seu caso, para devolver firmeza, conforto, mastigação e a estética do sorriso.</p>
     </div>
     <div class="linha">
       <h3>Reabilitação oral completa</h3>
@@ -354,7 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="casos escuro" aria-labelledby="t-casos">
   <div class="wrap">
     <div class="intro">
-      <h2 id="t-casos">Casos difíceis são a especialidade do Dr. Reile</h2>
+      <h2 id="t-casos">Casos difíceis são o foco do Dr. Reile</h2>
       <p>Mais de 20 anos atendendo pacientes com perdas grandes de dentes, pouco osso ou próteses antigas que não funcionavam mais.</p>
     </div>
     <!-- Trocar cada par pelas fotos reais (com autorização assinada) e legenda curta do caso -->
@@ -374,8 +373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- 5. QUEM É O DR. REILE -->
 <section class="quem" aria-labelledby="t-quem">
   <div class="wrap">
-    <!-- Foto do Dr. Reile atendendo, diferente da foto do topo -->
-    <div class="pendente">Foto do Dr. Reile atendendo<br>a definir</div>
+    <div class="foto-quem"><img src="/drreile/dr-reile.webp" width="624" height="848" loading="lazy" alt="Dr. Reile Gomes, de jaleco, na recepção da Novos Sorrisos"></div>
     <div>
       <h2 id="t-quem">Mais de 20 anos transformando sorrisos e vidas</h2>
       <p>Com mais de 20 anos de formado, o Dr. Reile Gomes construiu sua carreira em cirurgias e reabilitações orais. Ele acredita que, antes de escolher a odontologia, foi escolhido por ela.</p>
@@ -451,8 +449,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </details>
       <details>
         <summary>Aceita convênio? Como é o pagamento?</summary>
-        <!-- CONFIRMAR com a clínica: convênio e o que pode ser dito sobre pagamento -->
-        <p>Existem condições de pagamento facilitadas, apresentadas na avaliação.</p>
+        <p>O atendimento é particular, sem convênios odontológicos. Há condições facilitadas de pagamento, com parcelamento, Pix e boleto, definidas depois da avaliação e do plano de tratamento.</p>
       </details>
     </div>
   </div>
@@ -483,17 +480,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>Contato</h3>
       <p>Telefone <a href="tel:+552126059626">(21) 2605-9626</a></p>
       <p>WhatsApp <a href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20e%20quero%20avaliar%20meu%20caso." data-cta="rodape">(21) 96657-3573</a></p>
-      <p>Horário: <span class="tbd">a confirmar</span></p>
+      <p>Segunda a sexta: horários sob consulta</p>
+      <p>Sábados: sob consulta, conforme a agenda</p>
     </div>
     <div>
       <h3>Responsável técnico</h3>
       <p>Dr. Reile Gomes</p>
-      <p>CRO-RJ <span class="tbd">nº a confirmar</span></p>
+      <p>CRO-RJ 33.356 · Especialista em Ortodontia</p>
     </div>
     <div class="base">
       <span>© 2026 Dr. Reile Gomes · Novos Sorrisos</span>
-      <!-- Incluir link da Política de privacidade quando a página existir -->
-      <a href="/">novossorrisos.com.br</a>
+      <span><a href="/privacidade/">Política de privacidade</a> · <a href="/">novossorrisos.com.br</a></span>
     </div>
   </div>
 </footer>
