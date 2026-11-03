@@ -749,7 +749,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (t.indexOf('ip=') === -1) return {};
             var o = {};
             t.split('\n').forEach(function (l) { var i = l.indexOf('='); if (i > 0) o[l.slice(0, i)] = l.slice(i + 1); });
-            return { ip: o.ip || '', pais: o.loc || '', cloudflare_colo: o.colo || '' };
+            return { ip: o.ip || '', pais: o.loc || '', cloudflare_colo: o.colo || '', cidade: o.city || '', estado: o.region || '' };
           }).catch(function () { return {}; });
       }
 
@@ -789,6 +789,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           dados.fp_ip = r[1].ip || '';
           dados.fp_pais = r[1].pais || '';
           dados.fp_cloudflare_colo = r[1].cloudflare_colo || '';
+          // Vercel: o /api/trace também informa cidade e estado (nomes reservados do guia)
+          if (r[1].cidade) dados.cidade = r[1].cidade;
+          if (r[1].estado) dados.estado = r[1].estado;
           // form-urlencoded evita o preflight de CORS; keepalive garante o envio mesmo abrindo o WhatsApp
           return fetch(WEBHOOK, { method: 'POST', mode: 'no-cors', keepalive: true, body: new URLSearchParams(dados) });
         }).catch(function () {});
