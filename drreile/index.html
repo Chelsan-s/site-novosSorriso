@@ -138,8 +138,19 @@ p{max-width:62ch}
 .chip i svg{width:22px;height:22px}
 .chip.b{bottom:12%;left:-14%}
 
+/* 1b. Vídeo (VSL) */
+.vsl{padding:88px 0 8px}
+.vsl-sub{margin-top:16px;color:var(--suave);font-size:1.1rem;max-width:52ch}
+.vsl-quadro{position:relative;max-width:960px;margin:40px auto 0;border-radius:26px;overflow:hidden;background:var(--navy-fundo);aspect-ratio:16/9;box-shadow:0 30px 60px rgba(0,24,69,.16)}
+.vsl-quadro video{display:block;width:100%;height:100%;object-fit:cover;background:var(--navy-fundo)}
+.vsl-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:14px;padding-left:9%;border:0;cursor:pointer;background:linear-gradient(90deg,rgba(0,24,69,.45),rgba(0,24,69,0) 45%);color:#fff;font-family:var(--sans)}
+.vsl-icone{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 12px rgba(0,122,55,.25);transition:background-color .15s ease-out}
+.vsl-icone svg{width:34px;height:34px;margin-left:4px}
+.vsl-play:hover .vsl-icone{background:var(--verde-escuro)}
+.vsl-rotulo{font-weight:700;font-size:1rem;padding:6px 14px;border-radius:999px;background:rgba(0,24,69,.7)}
+.vsl-play[hidden]{display:none}
 /* 2. VOCÊ SE IDENTIFICA? */
-.identifica{position:relative;margin-top:72px;background:var(--painel);padding:88px 0 0;overflow:visible}
+.identifica{position:relative;margin-top:88px;background:var(--painel);padding:88px 0 0;overflow:visible}
 .identifica .marca-dagua{position:absolute;left:0;right:0;bottom:40px;text-align:center;font-weight:700;font-size:clamp(4rem,14vw,12rem);line-height:1;letter-spacing:-.04em;color:rgba(255,255,255,.75);pointer-events:none;user-select:none;white-space:nowrap;overflow:hidden}
 .topo-secao{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px}
 .marcar{position:relative;z-index:1;list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:48px}
@@ -332,6 +343,13 @@ details p{padding:0 0 22px;color:var(--suave);font-size:1.02rem}
   .identifica,.casos,.faq{padding-top:64px;padding-bottom:64px}
   .identifica{padding-bottom:0}
   .tratamentos{padding:120px 0 72px}
+  .vsl{padding:64px 0 0}
+  .vsl-quadro{margin-top:28px;border-radius:18px}
+  .vsl-icone{width:68px;height:68px}
+  .vsl-icone svg{width:28px;height:28px}
+  .vsl-play{padding-left:6%;gap:10px}
+  .vsl-rotulo{font-size:.9rem;padding:4px 12px}
+  .identifica{margin-top:64px}
   .tratamentos::before,.tratamentos::after{display:none}
   .quem,.local{padding:72px 0}
   .passos,.depo{padding-bottom:72px}
@@ -396,6 +414,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="foto"><img src="/drreile/dr-reile-hero.webp" width="502" height="628" alt="Dr. Reile Gomes sorrindo, sentado à mesa do consultório" fetchpriority="high"></div>
         <div class="chip b"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3.5c-2.4 0-4 1.9-4 4.6 0 2.3 1 3.6 1.6 5.4.6 1.9.7 3.6 1.1 5.4.3 1.3.8 1.9 1.6 1.9 1.4 0 1.6-2.4 2.1-4.3.3-1.1.8-1.7 2.1-1.7s1.8.6 2.1 1.7c.5 1.9.7 4.3 2.1 4.3.8 0 1.3-.6 1.6-1.9.4-1.8.5-3.5 1.1-5.4.6-1.8 1.6-3.1 1.6-5.4 0-2.7-1.6-4.6-4-4.6-1.8 0-2.7 1-4.5 1s-2.7-1-4.5-1Z"/></svg></i>Experiência em casos complexos de perda de dentes</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1b. VÍDEO (VSL) -->
+<section class="vsl" aria-labelledby="t-vsl">
+  <div class="wrap">
+    <div class="centro">
+      <span class="tag">Vídeo</span>
+      <h2 id="t-vsl">Conheça o <span class="luz">Dr. Reile Gomes</span></h2>
+      <p class="vsl-sub">Em menos de um minuto, ele explica como atende quem perdeu dentes ou usa dentadura.</p>
+    </div>
+    <div class="vsl-quadro">
+      <video id="vsl-video" playsinline preload="none" poster="/drreile/vsl-capa.webp" width="1280" height="720">
+        <source src="/drreile/vsl.mp4" type="video/mp4">
+      </video>
+      <button type="button" class="vsl-play" id="vsl-play" aria-label="Assistir ao vídeo do Dr. Reile Gomes (49 segundos)">
+        <span class="vsl-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></span>
+        <span class="vsl-rotulo">Assistir · 49s</span>
+      </button>
+    </div>
+    <div class="acao centro">
+      <a class="btn" href="#avaliacao" data-cta="vsl">Quero avaliar meu caso</a>
     </div>
   </div>
 </section>
@@ -848,6 +889,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
   });
+})();
+</script>
+<script>
+/* Vídeo (VSL): botão de play próprio e eventos de medição */
+(function(){
+  var v=document.getElementById('vsl-video'), b=document.getElementById('vsl-play');
+  if(!v||!b) return;
+  function evento(nome){ try{ window.dataLayer=window.dataLayer||[]; dataLayer.push({event:nome,video:'vsl-drreile'}); }catch(e){} }
+  b.addEventListener('click',function(){
+    v.controls=true; b.hidden=true;
+    var p=v.play(); if(p&&p.catch) p.catch(function(){ b.hidden=false; });
+  });
+  var marcos={25:false,50:false,75:false}, iniciou=false;
+  v.addEventListener('play',function(){ if(!iniciou){ iniciou=true; evento('vsl_play'); } });
+  v.addEventListener('timeupdate',function(){
+    if(!v.duration) return;
+    var pct=v.currentTime/v.duration*100;
+    [25,50,75].forEach(function(m){ if(!marcos[m]&&pct>=m){ marcos[m]=true; evento('vsl_'+m); } });
+  });
+  v.addEventListener('ended',function(){ evento('vsl_completo'); });
 })();
 </script>
 </body>
