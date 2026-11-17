@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Novos Sorrisos · Clínica odontológica em São Gonçalo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Modelo 1 · crítica: F4 H5 E4 S4 C4 M5 */
+:root{
+  --ink:#14213f; --ink-2:#3c4863; --ink-3:#5d6880;
+  --navy:#16295c; --navy-2:#1f3778;
+  --green:#17803a; --green-d:#106a2f;
+  --sun:#f3cd16;
+  --s0:#fbfcfd; --s1:#f1f3f6; --s2:#e4e8ee; --line:#d5dbe4;
+  --on-navy:#e9eef8; --on-navy-2:#b5c1da;
+  --display:"Schibsted Grotesk",system-ui,sans-serif;
+  --text:"Figtree",system-ui,sans-serif;
+  --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--s0);color:var(--ink);font:400 17px/1.6 var(--text);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.08;overflow-wrap:anywhere}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font:600 16px/1 var(--text);padding:16px 22px;border-radius:8px;transition:background-color .15s ease-out}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:var(--green-d)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+
+/* barra utilitária */
+.util{background:var(--navy);color:var(--on-navy-2);font-size:14px}
+.util .wrap{display:flex;justify-content:space-between;gap:24px;padding-top:9px;padding-bottom:9px}
+.util b{color:var(--on-navy);font-weight:600}
+
+/* header */
+header{background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:40px;height:84px}
+header .logo img{height:64px;width:auto}
+header nav{display:flex;gap:30px;font-weight:500;font-size:16px;color:var(--ink-2);margin-left:auto}
+header nav a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--sun)}
+header .tel{font-weight:600;font-size:15px;color:var(--ink-2);white-space:nowrap}
+
+/* hero */
+.hero{padding:64px 0 0;background:#fff}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:end}
+.hero-txt{padding-bottom:64px}
+.kicker{font-weight:600;color:var(--green);font-size:15px;margin-bottom:18px}
+.hero h1{font-size:62px;font-weight:700;color:var(--navy)}
+.hero p.lead{margin-top:22px;font-size:19px;color:var(--ink-2);max-width:31em}
+.hero .acts{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-foto{position:relative;align-self:stretch}
+.hero-foto img{width:100%;height:560px;object-fit:cover;border-radius:14px 14px 0 0}
+.hero-foto figcaption{position:absolute;left:-28px;bottom:36px;background:var(--navy);color:var(--on-navy);padding:16px 20px;border-radius:8px;font-size:14px;line-height:1.45;max-width:270px}
+.hero-foto figcaption b{display:block;font-family:var(--display);font-size:17px;color:#fff}
+
+/* faixa de fatos */
+.fatos{background:var(--s1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fatos .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fatos div{padding:26px 24px 26px 0;border-right:1px solid var(--line);margin-right:24px}
+.fatos div:last-child{border:0;margin:0}
+.fatos dt{font-size:13.5px;color:var(--ink-3)}
+.fatos dd{font-family:var(--display);font-weight:600;font-size:18px;margin-top:4px}
+
+/* tratamentos — índice */
+.trat{padding:112px 0 96px}
+.trat-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:48px}
+h2{font-size:44px;font-weight:700;color:var(--navy)}
+.trat-head p{color:var(--ink-2);max-width:30em}
+.trat-grid{display:grid;grid-template-columns:400px 1fr;gap:56px;align-items:start}
+.trat-img{position:sticky;top:24px}
+.trat-img img{border-radius:12px;aspect-ratio:4/5;object-fit:cover;width:100%;background:var(--s2)}
+.trat-img p{font-size:14px;color:var(--ink-3);margin-top:12px}
+.lista{border-top:2px solid var(--navy)}
+.lista li{list-style:none;display:grid;grid-template-columns:1fr 1.25fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line)}
+.lista h3{font-size:24px;font-weight:600;color:var(--ink)}
+.lista .tag{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--green);background:#e5f2e9;padding:4px 9px;border-radius:5px}
+.lista p{color:var(--ink-2);font-size:16.5px}
+.lista li.destaque h3{color:var(--navy)}
+.lista li.destaque{margin-left:-20px;background:linear-gradient(var(--sun),var(--sun)) left 28px/4px 30px no-repeat;padding-left:20px}
+
+/* a clínica */
+.clinica{background:var(--navy);color:var(--on-navy);padding:104px 0}
+.clinica h2{color:#fff}
+.cl-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;margin-top:44px}
+.cl-grid img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.cl-side{display:grid;grid-template-rows:auto 1fr;gap:28px}
+.cl-side p{color:var(--on-navy-2);font-size:17.5px}
+.cl-side p+p{margin-top:14px}
+.cl-side img{height:300px}
+.cl-pts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(233,238,248,.18)}
+.cl-pts div{padding:26px 28px 0 0}
+.cl-pts h3{font-size:19px;font-weight:600;color:#fff;margin-bottom:8px}
+.cl-pts p{color:var(--on-navy-2);font-size:15.5px}
+
+/* equipe */
+.equipe{padding:112px 0}
+.eq{display:grid;grid-template-columns:440px 1fr;gap:72px;align-items:center;margin-top:48px}
+.eq img{border-radius:12px;aspect-ratio:1/1.05;object-fit:cover;width:100%}
+.eq h3{font-size:32px;color:var(--navy)}
+.eq .cro{font-size:14.5px;color:var(--ink-3);margin-top:6px}
+.eq p{color:var(--ink-2);margin-top:18px;max-width:34em}
+.eq dl{display:grid;grid-template-columns:repeat(3,auto);gap:28px;margin:30px 0 34px;justify-content:start}
+.eq dt{font-size:13.5px;color:var(--ink-3)}
+.eq dd{font-weight:600}
+
+/* etapas */
+.etapas{background:var(--s1);padding:96px 0}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;counter-reset:p}
+.passos li{list-style:none;padding:0 28px 0 0;position:relative}
+.passos li::before{counter-increment:p;content:"0" counter(p);display:block;font-family:var(--display);font-weight:700;font-size:15px;color:var(--navy);border-top:2px solid var(--navy);padding-top:16px;margin-bottom:14px;margin-right:-28px}
+.passos li:last-child::before{border-color:var(--sun)}
+.passos h3{font-size:20px;font-weight:600;margin-bottom:8px}
+.passos p{color:var(--ink-2);font-size:16px}
+
+/* faq */
+.faq{padding:112px 0}
+.faq .wrap{display:grid;grid-template-columns:380px 1fr;gap:72px}
+.faq-l p{color:var(--ink-2);margin-top:18px}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;font-family:var(--display);font-weight:600;font-size:20px;display:flex;justify-content:space-between;gap:24px}
+summary::after{content:"+";font-weight:500;color:var(--green);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--ink-2);margin-top:10px;max-width:40em}
+
+/* contato */
+.contato{padding:0 0 112px}
+.ct{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.ct-info{padding:52px}
+.ct-info h2{font-size:40px}
+.ct-info>p{color:var(--ink-2);margin-top:14px}
+.ct-info dl{margin:30px 0 34px;display:grid;gap:18px}
+.ct-info dt{font-size:13.5px;color:var(--ink-3)}
+.ct-info dd{font-weight:500}
+.mapa{position:relative;background:var(--s2);min-height:520px}
+.mapa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center}
+.mapa figcaption{position:absolute;left:20px;bottom:20px;background:#fff;padding:10px 14px;border-radius:7px;font-size:14px;font-weight:500}
+.mapa figcaption a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+
+/* rodapé */
+footer{background:var(--ink);color:var(--on-navy-2);padding:56px 0 32px;font-size:15px}
+.ft{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px}
+.ft img{height:64px;width:auto}
+.ft h4{font:600 14px var(--text);color:#fff;margin-bottom:10px}
+.ft-base{margin-top:44px;padding-top:22px;border-top:1px solid rgba(233,238,248,.15);display:flex;justify-content:space-between;gap:20px;font-size:13.5px}
+
+/* mobile */
+.mob-only{display:none}
+@media (max-width:860px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .util{display:none}
+  header .wrap{height:68px;gap:12px}
+  header .logo img{height:44px}
+  header nav,header .tel{display:none}
+  header .btn{margin-left:auto;padding:12px 14px;font-size:15px}
+  .hero{padding-top:36px}
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .hero-txt{padding-bottom:0}
+  .hero h1{font-size:40px}
+  .hero p.lead{font-size:17px}
+  .hero .acts .btn{width:100%;justify-content:center}
+  .hero-foto img{height:340px;border-radius:12px 12px 0 0}
+  .hero-foto figcaption{left:12px;bottom:16px;right:auto;max-width:240px}
+  .fatos .wrap{grid-template-columns:1fr 1fr}
+  .fatos div{border:0;margin:0;padding:18px 12px 18px 0}
+  h2{font-size:32px}
+  .trat{padding:72px 0}
+  .trat-head,.trat-grid{grid-template-columns:1fr;gap:20px}
+  .trat-img{position:static}
+  .trat-img img{aspect-ratio:16/11}
+  .lista li{grid-template-columns:1fr;gap:8px;padding:22px 0}
+  .lista h3{font-size:21px}
+  .clinica{padding:72px 0}
+  .cl-grid{grid-template-columns:1fr;gap:28px}
+  .cl-grid>img{height:260px}
+  .cl-side img{height:220px}
+  .cl-pts{grid-template-columns:1fr;margin-top:36px}
+  .equipe{padding:72px 0}
+  .eq{grid-template-columns:1fr;gap:28px;margin-top:28px}
+  .eq dl{grid-template-columns:1fr 1fr;gap:16px}
+  .eq .btn{width:100%;justify-content:center}
+  .etapas{padding:72px 0}
+  .passos{grid-template-columns:1fr;gap:26px}
+  .faq{padding:72px 0}
+  .faq .wrap{grid-template-columns:1fr;gap:28px}
+  summary{font-size:18px}
+  .ct{grid-template-columns:1fr}
+  .ct-info{padding:28px 22px}
+  .ct-info h2{font-size:30px}
+  .ct-info .btn{width:100%;justify-content:center}
+  .mapa{min-height:300px}
+  .mapa img{object-position:center 20%}
+  .lista li.destaque{margin-left:0;padding-left:16px}
+  .contato{padding-bottom:72px}
+  .ft{grid-template-columns:1fr 1fr;gap:28px}
+  .ft>div:first-child{grid-column:1/-1}
+  .ft-base{flex-direction:column}
+  .mob-only{display:block}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="util"><div class="wrap">
+  <span>R. João Caetano, 52, sala 504 · Alcântara, São Gonçalo/RJ</span>
+  <span>Atendimento particular · <b>Seg a sex, horários sob consulta</b></span>
+</div></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#"><img src="img/logo-header.png" alt="Novos Sorrisos"></a>
+  <nav>
+    <a href="#" aria-current="page">Início</a>
+    <a href="#tratamentos">Tratamentos</a>
+    <a href="#clinica">A clínica</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <a class="tel" href="#">(21) 2605-9626</a>
+  <a class="btn btn-wa" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg>Agendar</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="hero-txt">
+    <p class="kicker">Clínica odontológica em Alcântara, São Gonçalo</p>
+    <h1>Do check-up ao implante, no mesmo endereço.</h1>
+    <p class="lead">A Novos Sorrisos reúne clínica geral, implantes, próteses e ortodontia. Você é avaliado por quem vai tratar, recebe o plano por escrito e sabe o valor antes de começar.</p>
+    <div class="acts">
+      <a class="btn btn-wa" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>Marcar avaliação</a>
+      <a class="btn btn-line" href="#tratamentos">Ver tratamentos</a>
+    </div>
+  </div>
+  <figure class="hero-foto">
+    <img src="img/recepcao.jpg" alt="Recepção da Novos Sorrisos">
+    <figcaption><b>Sala 504, Ed. João Caetano</b>Em cima do antigo restaurante Dom Nato, no centro de Alcântara.</figcaption>
+  </figure>
+</div></section>
+
+<section class="fatos"><dl class="wrap">
+  <div><dt>Responsável técnico</dt><dd>CRO-RJ 33.356</dd></div>
+  <div><dt>Atendimento</dt><dd>Particular, sem convênio</dd></div>
+  <div><dt>Pagamento</dt><dd>Pix, boleto e parcelado</dd></div>
+  <div><dt>WhatsApp</dt><dd>(21) 96657-3573</dd></div>
+</dl></section>
+
+<section class="trat" id="tratamentos"><div class="wrap">
+  <div class="trat-head">
+    <h2>Tratamentos</h2>
+    <p>A primeira consulta é uma avaliação completa. A partir dela você recebe o plano com etapas, prazos e valores, e decide com calma.</p>
+  </div>
+  <div class="trat-grid">
+    <div class="trat-img">
+      <img src="img/implante.jpg" alt="Ilustração de implante dentário entre dois dentes">
+      <p>Implante: um pino de titânio no osso, com a coroa por cima.</p>
+    </div>
+    <ul class="lista">
+      <li class="destaque"><div><h3>Implantes e prótese sobre implante</h3><span class="tag">Dr. Reile Gomes</span></div><p>Repõe um dente ou a arcada inteira com dentes fixos. Indicado para quem perdeu dentes ou quer deixar a dentadura.</p></li>
+      <li><div><h3>Reabilitação oral</h3><span class="tag">Casos com várias perdas</span></div><p>Planejamento da boca inteira para quem perdeu muitos dentes, tem pouco osso ou fez tratamentos que não deram certo.</p></li>
+      <li><div><h3>Próteses fixas e removíveis</h3></div><p>Coroas, pontes e dentaduras feitas sob medida, com ajuste até ficarem confortáveis para mastigar e falar.</p></li>
+      <li><div><h3>Ortodontia</h3></div><p>Aparelho fixo e manutenção mensal para alinhar os dentes e corrigir a mordida, em adolescentes e adultos.</p></li>
+      <li><div><h3>Clínica geral</h3></div><p>Limpeza, restaurações, tratamento de canal e extrações. É por aqui que a maioria dos pacientes começa.</p></li>
+      <li><div><h3>Estética do sorriso</h3></div><p>Clareamento e facetas, sempre depois de avaliar a saúde da gengiva e dos dentes.</p></li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="clinica" id="clinica"><div class="wrap">
+  <h2>Uma clínica de bairro, com estrutura de centro.</h2>
+  <div class="cl-grid">
+    <img src="img/socios.jpg" alt="Sócios da Novos Sorrisos na recepção da clínica">
+    <div class="cl-side">
+      <div>
+        <p>A Novos Sorrisos nasceu em Alcântara para que ninguém precisasse atravessar a cidade para tratar os dentes.</p>
+        <p>Hoje a clínica atende desde a limpeza de rotina até reabilitações completas, com a mesma equipe acompanhando o paciente do começo ao fim.</p>
+      </div>
+      <img src="img/recepcao2.jpg" alt="Recepção vista de frente">
+    </div>
+  </div>
+  <div class="cl-pts">
+    <div><h3>Hora marcada de verdade</h3><p>A agenda é organizada para você não passar a manhã na sala de espera.</p></div>
+    <div><h3>Plano por escrito</h3><p>Cada etapa, prazo e valor no papel antes de qualquer procedimento.</p></div>
+    <div><h3>Acompanhamento depois</h3><p>A equipe segue com você até a entrega do tratamento e depois dela.</p></div>
+  </div>
+</div></section>
+
+<section class="equipe" id="equipe"><div class="wrap">
+  <h2>Quem atende você</h2>
+  <div class="eq">
+    <img src="img/reile-sobre.jpg" alt="Dr. Reile Gomes no consultório">
+    <div>
+      <h3>Dr. Reile Gomes</h3>
+      <p class="cro">Responsável técnico · CRO-RJ 33.356</p>
+      <p>Formado há mais de 20 anos, construiu a carreira em cirurgias e reabilitações orais. Lidera os protocolos de atendimento da clínica e atende pessoalmente os casos de implante e prótese.</p>
+      <dl>
+        <div><dt>Formado há</dt><dd>Mais de 20 anos</dd></div>
+        <div><dt>Atuação</dt><dd>Reabilitação oral</dd></div>
+        <div><dt>Atende</dt><dd>Implantes e próteses</dd></div>
+      </dl>
+      <a class="btn btn-line" href="#">Conhecer o Dr. Reile</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="etapas"><div class="wrap">
+  <h2>Como é a primeira visita</h2>
+  <ol class="passos">
+    <li><h3>Agendamento</h3><p>Pelo WhatsApp ou telefone, no horário que encaixa na sua rotina.</p></li>
+    <li><h3>Avaliação</h3><p>Exame clínico e, se precisar, pedido de radiografia ou tomografia.</p></li>
+    <li><h3>Plano de tratamento</h3><p>Opções explicadas com calma, com prazos e formas de pagamento.</p></li>
+    <li><h3>Tratamento e revisões</h3><p>Você começa quando decidir, com acompanhamento até a entrega.</p></li>
+  </ol>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <div class="faq-l">
+    <h2>Dúvidas comuns</h2>
+    <p>Não achou a sua? Mande no WhatsApp que a equipe responde.</p>
+  </div>
+  <div>
+    <details open><summary>Vocês aceitam convênio?</summary><p>O atendimento é particular. Há parcelamento, Pix e boleto, combinados depois da avaliação.</p></details>
+    <details open><summary>Quanto tempo leva um tratamento?</summary><p>Depende de cada caso. Na avaliação você recebe o plano com etapas e prazos.</p></details>
+    <details><summary>Já me disseram que meu caso é difícil. Tem jeito?</summary><p>Na maioria das vezes, sim. Casos complexos são o foco do Dr. Reile Gomes, e só a avaliação mostra o melhor caminho.</p></details>
+    <details><summary>Usei dentadura a vida toda. Posso ter dentes fixos?</summary><p>Muitas vezes, sim. Só a avaliação com exames mostra o caminho para o seu caso.</p></details>
+    <details><summary>Tenho pouco osso. Posso fazer implante?</summary><p>Existem técnicas para muitos desses casos. O dentista avalia com exames e explica as opções.</p></details>
+  </div>
+</div></section>
+
+<section class="contato" id="contato"><div class="wrap">
+  <div class="ct">
+    <div class="ct-info">
+      <h2>Marque sua avaliação</h2>
+      <p>Chame no WhatsApp e diga o que está sentindo. A equipe encaixa você no melhor horário.</p>
+      <dl>
+        <div><dt>Endereço</dt><dd>R. João Caetano, 52, sala 504 · Alcântara, São Gonçalo/RJ</dd></div>
+        <div><dt>Horário</dt><dd>Seg a sex, horários sob consulta · sábados conforme a agenda</dd></div>
+        <div><dt>Telefones</dt><dd>(21) 96657-3573 · (21) 2605-9626</dd></div>
+      </dl>
+      <a class="btn btn-wa" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>Falar no WhatsApp</a>
+    </div>
+    <figure class="mapa"><img src="img/reile-video.jpg" alt="Consultório da Novos Sorrisos"><figcaption>Consultório 504 · <a href="#">Abrir no Google Maps</a></figcaption></figure>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="ft">
+    <div><img src="img/logo-footer.png" alt="Novos Sorrisos"></div>
+    <div><h4>Endereço</h4>R. João Caetano, 52, sala 504<br>Alcântara, São Gonçalo/RJ</div>
+    <div><h4>Contato</h4>(21) 96657-3573<br>(21) 2605-9626</div>
+    <div><h4>Responsável técnico</h4>Dr. Reile Gomes<br>CRO-RJ 33.356</div>
+  </div>
+  <div class="ft-base"><span>© 2026 Novos Sorrisos Odontologia</span><span>Política de privacidade · novossorrisos.com.br</span></div>
+</div></footer>
+</body>
+</html>
