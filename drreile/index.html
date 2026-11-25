@@ -880,6 +880,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.getElementById('ok-titulo').textContent='Recebemos seu contato, '+nome.split(' ')[0]+'!';
         ok.hidden=false; ok.focus();
         try{ window.dataLayer=window.dataLayer||[]; dataLayer.push({event:'lead_enviado',lead_tag:TAG}); }catch(e){}
+        // Google Ads: conversão "Enviar formulário de lead" + WhatsApp do lead pras
+        // conversões otimizadas (o gtag aplica o hash SHA-256 antes de enviar).
+        try{
+          if(window.gtag){
+            gtag('set','user_data',{phone_number:'+55'+d});
+            gtag('event','conversion',{send_to:'AW-18193734108/3OgwCOCi0rEdENyzueND'});
+          }
+        }catch(e){}
         try{ window.fbq&&fbq('track','Lead',{content_name:TAG}); }catch(e){}
       }else{
         var falha=document.getElementById('form-falha');
