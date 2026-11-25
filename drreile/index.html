@@ -294,6 +294,12 @@ details p{padding:0 0 22px;color:var(--suave);font-size:1.02rem}
 .form-fim p{margin-top:12px;color:var(--suave);font-size:1.05rem}
 .form-fim .btn{margin-top:22px}
 .form-fim:focus{outline:none}
+/* WhatsApp flutuante */
+.fab{position:fixed;right:20px;bottom:20px;z-index:var(--z-fab);width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,40,20,.3);transition:transform .15s ease-out,opacity .2s ease-out,visibility .2s}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:32px;height:32px}
+.fab.oculto{opacity:0;visibility:hidden;pointer-events:none}
+@media (max-width:640px){.fab{right:14px;bottom:14px;width:56px;height:56px}}
 .rodape{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding:26px 0 34px;font-size:.92rem;color:var(--suave)}
 .rodape a{color:var(--navy)}
 
@@ -684,6 +690,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span><a href="/privacidade/">Política de privacidade</a> · <a href="/">novossorrisos.com.br</a></span>
 </footer>
 
+<!-- WhatsApp flutuante: aparece depois do topo e some enquanto o formulário está na tela -->
+<a class="fab oculto" id="fab" href="https://wa.me/5521966573573?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Dr.%20Reile%20Gomes%20e%20quero%20avaliar%20meu%20caso." target="_blank" rel="noopener" data-cta="flutuante" aria-label="Falar com a equipe do Dr. Reile Gomes no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .7.5 1.3.7 1.6.8.2.1.4.1.6-.1l.7-.9c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg></a>
+
 
 <script>
 (function(){
@@ -697,6 +706,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }
   var barra=document.getElementById('barra'), hero=document.getElementById('hero');
+  // WhatsApp flutuante: escondido no topo (já tem botões ali) e quando o
+  // formulário está na tela (pra não cobrir o botão de enviar no celular).
+  var fab=document.getElementById('fab'), form=document.getElementById('avaliacao');
+  if(fab){
+    if(!('IntersectionObserver' in window)){ fab.classList.remove('oculto'); }
+    else {
+      var noTopo=true, noForm=false;
+      var att=function(){ fab.classList.toggle('oculto', noTopo||noForm); };
+      if(hero) new IntersectionObserver(function(e){ noTopo=e[0].isIntersecting; att(); },{threshold:0.05}).observe(hero); else noTopo=false;
+      if(form) new IntersectionObserver(function(e){ noForm=e[0].isIntersecting; att(); },{threshold:0.1}).observe(form);
+      att();
+    }
+    fab.addEventListener('click',function(){ try{ window.dataLayer=window.dataLayer||[]; dataLayer.push({event:'whatsapp_click',origem:'flutuante'}); }catch(e){} });
+  }
   if(!hero||!barra||!('IntersectionObserver' in window)){ barra&&barra.classList.add('visivel'); return; }
   new IntersectionObserver(function(e){
     var dentro=e[0].isIntersecting;
